@@ -1,0 +1,10 @@
+Document: asio
+Title: asio Manual
+Author: Christopher M. Kohlhoff <chris@kohlhoff.com>
+Section: Programming
+
+Format: HTML
+Index: /usr/share/doc/libasio-dev/index.html
+Files: /usr/share/doc/libasio-dev/*.html
+ /usr/share/doc/libasio-dev/*/*.html
+ /usr/share/doc/libasio-dev/*/*/*.html
