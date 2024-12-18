@@ -2,3 +2,37 @@
 
 %:
 	dh $@
+
+override_dh_installexamples:
+	dh_installexamples
+
+#	Correct links to examples from the documentation
+	(set -e; \
+	for FILE in `find debian/libasio-doc/usr/share/doc/libasio-dev/asio/examples -iname *.html`; do \
+		echo "Correcting links in $$FILE"; \
+		sed -i -e 's@../src/@@g' $$FILE; \
+	done)
+
+#	Remove empty directories
+	find debian/libasio-doc/usr/share/doc/libasio-dev/examples/ \
+		-type d -empty \
+		-printf 'Removing empty directory %p\n' \
+		-exec rmdir {} \;
+
+#	Also drop Makefiles templates
+	find debian/libasio-doc/usr/share/doc/libasio-dev/examples \
+		-type f -iname "Makefile*" -delete
+
+#	Remove binary and build files
+	find debian/libasio-doc/usr/share/doc/libasio-dev/examples \
+		-type f -executable -delete
+	find debian/libasio-doc/usr/share/doc/libasio-dev/examples \
+		-type f \( -iname "*.o" -o -iname "*.dirstamp" \) -delete
+	find debian/libasio-doc/usr/share/doc/libasio-dev/examples \
+		-type d -iname "*.deps" -delete
+
+override_dh_compress:
+	dh_compress -X.cpp -X.hpp
+
+override_dh_auto_test:
+	dh_auto_test || (cat src/tests/test-suite.log; false)

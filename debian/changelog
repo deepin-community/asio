@@ -1,5 +1,298 @@
-template-repository (1.0-1) unstable; urgency=medium
+asio (1:1.30.2-1) unstable; urgency=medium
 
-  * Initial release
+  * New upstream version 1.30.2
+  * Add myself as uploader and update vcs link
+  * Bump S-V from 4.6.2 to 4.7.0: no changes required.
 
- -- Tsic404 <liuheng@deepin.org>  Sat, 28 Jan 2023 13:46:49 +0800
+ -- Stephan Lachnit <stephanlachnit@debian.org>  Thu, 01 Aug 2024 09:14:51 +0200
+
+asio (1:1.28.1-0.2) unstable; urgency=medium
+
+  * Non-maintainer upload.
+  * Make package arch=all again (Closes: #1063076)
+
+ -- Stephan Lachnit <stephanlachnit@debian.org>  Mon, 05 Feb 2024 09:25:13 +0100
+
+asio (1:1.28.1-0.1) unstable; urgency=medium
+
+  * Non-maintainer upload.
+
+  [ Debian Janitor ]
+  * Trim trailing whitespace.
+  * Bump debhelper from old 11 to 13.
+  * Set debhelper-compat version in Build-Depends.
+  * Update standards version to 4.6.2, no changes needed.
+
+  [ Stephan Lachnit ]
+  * New upstream version 1.28.1
+  * Make arch=any and install pkgconfig file
+
+ -- Stephan Lachnit <stephanlachnit@debian.org>  Thu, 25 Jan 2024 15:03:00 +0100
+
+asio (1:1.22.1-1) unstable; urgency=medium
+
+  * New upstream release.
+  * Replace patch exclude-examples.patch with a smaller change that
+    only excludes example cpp20, which seem to be simply lacking in
+    the upstream tarball.
+  * Minor update to d/copyright.
+  * Bump S-V from 4.5.1 to 4.6.0: no changes required.
+  * Add d/gbp.conf
+
+ -- Markus Wanner <markus@bluegap.ch>  Fri, 15 Apr 2022 07:55:53 +0200
+
+asio (1:1.18.1-1) unstable; urgency=medium
+
+  * New upstream release.  Closes: #908169.
+  * Adjust patch exclude-examples.patch.
+  * Bump S-V from 4.2.1 to 4.5.1: no changes required.
+
+ -- Markus Wanner <markus@bluegap.ch>  Thu, 31 Dec 2020 14:22:08 +0100
+
+asio (1:1.12.2-1) unstable; urgency=medium
+
+  * New upstream release.
+  * Drop now unneeded dependency on autotools-dev.
+  * Drop unnecessary `--parallel` argument to dh.
+
+ -- Markus Wanner <markus@bluegap.ch>  Sun, 27 Jan 2019 17:01:10 +0100
+
+asio (1:1.12.1-1) unstable; urgency=medium
+
+  * New upstream release.
+  * Bump d/compat to version 11.
+  * d/copyright, d/control, d/watch: Use https instead of plain http.
+  * Update d/copyright.
+  * Make d/rules a tiny bit more verbose.
+  * Drop "with autootools-dev" argument for dh to silence a lintian
+    warning.
+  * Move examples to /usr/share/doc/libasio-dev/examples and provide
+    symlinks from /usr/share/doc/asio.
+  * Eliminate binaries from libasio-doc.
+  * Correct doc-base file.
+  * Bump the Standards-Version to 4.2.1: no further changes required.
+
+ -- Markus Wanner <markus@bluegap.ch>  Fri, 19 Oct 2018 22:16:42 +0200
+
+asio (1:1.12.0-1) experimental; urgency=medium
+
+  [ Markus Wanner ]
+  * New upstream release
+  * Update debian/copyright
+  * d/control: Move project to salsa.debian.org, update Vcs links.
+
+  [ Helmut Grohne ]
+  * Mark libasio-dev Multi-Arch: foreign. (Closes: #887383)
+  * Mark libasio-doc Multi-Arch: foreign.
+
+ -- Markus Wanner <markus@bluegap.ch>  Sun, 06 May 2018 09:50:33 +0000
+
+asio (1:1.10.8-1) unstable; urgency=medium
+
+  * New upstream release: 1.10.8.
+  * Update debian/copyright.
+  * Drop patch conditional_sslv3.patch, OPENSSL_NO_SSL3 is now handled
+    properly by upstream.
+  * Use https for Vcs links.
+
+ -- Markus Wanner <markus@bluegap.ch>  Mon, 03 Oct 2016 09:19:44 +0200
+
+asio (1:1.10.6-4) unstable; urgency=medium
+
+  * Bump S-V; no changes.
+  * Drop generated Makefiles from the -doc package. This should also fix
+    non-reproducibility.
+
+ -- Markus Wanner <markus@bluegap.ch>  Sun, 22 May 2016 13:31:55 +0200
+
+asio (1:1.10.6-3) unstable; urgency=medium
+
+  * Degrade all boost dependencies to recommendations to leverage
+    ASIO_STANDALONE. Closes: #812214.
+
+ -- Markus Wanner <markus@bluegap.ch>  Mon, 08 Feb 2016 20:07:04 +0100
+
+asio (1:1.10.6-2) unstable; urgency=medium
+
+  * Conditionalize OpenSSL SSLv3 support by adding patch
+    conditional_sslv3.patch. Closes: #804459.
+
+ -- Markus Wanner <markus@bluegap.ch>  Sun, 08 Nov 2015 19:56:50 +0100
+
+asio (1:1.10.6-1) unstable; urgency=medium
+
+  * Upload to unstable.
+
+ -- Markus Wanner <markus@bluegap.ch>  Fri, 22 May 2015 20:54:43 +0200
+
+asio (1:1.10.6-1~exp1) experimental; urgency=medium
+
+  * New upstream release.
+  * Drop patch relax-ip-multicast-tests.diff; a variant of it got applied
+    upstream.
+
+ -- Markus Wanner <markus@bluegap.ch>  Thu, 23 Apr 2015 10:20:05 +0200
+
+asio (1:1.10.4-1~exp2) experimental; urgency=medium
+
+  * New upstream release.
+  * Bump Standards-Version; no changes.
+  * Minor enhancement in rules: dump the test-suite.log in case of
+    failures.
+
+ -- Markus Wanner <markus@bluegap.ch>  Fri, 28 Nov 2014 14:50:20 +0100
+
+asio (1:1.10.2-2) unstable; urgency=medium
+
+  * Allow tests to pass under restricted environments, like pbuilder,
+    by adding patch relax-ip-multicast-tests.diff. Closes: #769306.
+
+ -- Markus Wanner <markus@bluegap.ch>  Fri, 28 Nov 2014 14:31:56 +0100
+
+asio (1:1.10.2-1) unstable; urgency=low
+
+  * New upstream release. (Closes: #718478)
+  * Fast-forward to the former 1.10.1-1, again.
+
+ -- Markus Wanner <markus@bluegap.ch>  Mon, 12 May 2014 13:20:45 +0200
+
+asio (1:1.4.8-3) unstable; urgency=high
+
+  * Put 1.4.x back into unstable for now using new epoch (1)
+
+ -- Daniel Pocock <daniel@pocock.com.au>  Tue, 11 Feb 2014 10:10:07 +0100
+
+asio (1.10.1-1) unstable; urgency=low
+
+  * New upstream release. (Closes: #718478)
+  * Drop fix-disabled-sslv2.patch, upstream seems to be compatible with
+    OpenSSL w/o SSL2 support, now.
+  * Adapt documentation links, better document what's done in rules.
+  * Use autotools-dev for up-to-date config.guess.
+  * Bump Standards-Version; no changes.
+  * Update debian/copyright.
+
+ -- Markus Wanner <markus@bluegap.ch>  Sun, 02 Feb 2014 10:13:11 +0100
+
+asio (1.4.8-2) unstable; urgency=low
+
+  * Upload to unstable.
+  * Use canonical VCS URL.
+
+ -- Markus Wanner <markus@bluegap.ch>  Thu, 23 May 2013 22:33:19 +0200
+
+asio (1.4.8-1) experimental; urgency=low
+
+  * New upstream release.
+  * New maintainer. (Closes: #583862).
+  * Switch to dpkg-source 3.0 (quilt) format, splitting patches.
+  * Drop the patch for src/Makefile.am, it got applied upstream.
+  * Drop the patch for Makefile.am, it isn't necessary anymore.
+  * Adjust the SSLv2 disabling patch.
+  * Migrate to debhelper 9, revamp the rules. Drop all custom build flags,
+    allow parallel builds.
+  * Update to standards version 3.9.4. No changes.
+  * Watch only releases with even minor version numbers, odd ones seem to
+    be non-stable releases.
+  * Migrate copyright info to machine readable format.
+  * Adjust short description to avoid duplicate.
+  * Add Homepage field and new Vcs info.
+  * Register HTML documentation with doc-base.
+
+ -- Markus Wanner <markus@bluegap.ch>  Sat, 02 Mar 2013 17:04:39 +0100
+
+asio (1.4.1-3.2) unstable; urgency=low
+
+  * Non maintainer upload.
+  * Fix build failure with GCC 4.7. Closes: #671992.
+
+ -- Matthias Klose <doko@debian.org>  Tue, 22 May 2012 09:41:57 +0000
+
+asio (1.4.1-3.1) unstable; urgency=low
+
+  * Non-maintainer upload.
+  * Fix "FTBFS: ./../include/asio/ssl/detail/openssl_context_service.hpp:73:20:
+    error: '::SSLv2_method' has not been declared":
+    add patch from Cristian Greco:
+    - Enable building when OpenSSL has disabled SSLv2. Throw exception if
+      SSLv2 connection requested but OPENSSL_NO_SSL2 defined. Fall back to
+      returning invalid state if exceptions are disabled.
+    (Closes: #622068, LP: #831346)
+
+ -- gregor herrmann <gregoa@debian.org>  Sun, 27 Nov 2011 17:58:44 +0100
+
+asio (1.4.1-3) unstable; urgency=low
+
+  * Update Boost dependency declarations to use boost-defaults
+  * Fix debian/rules to use versionless automake invocation (Closes: #543043)
+
+ -- Simon Richter <sjr@debian.org>  Mon, 24 Aug 2009 10:35:37 +0200
+
+asio (1.4.1-2) unstable; urgency=low
+
+  * Allow use together with Boost 1.38
+
+ -- Simon Richter <sjr@debian.org>  Mon, 27 Apr 2009 10:46:47 +0200
+
+asio (1.4.1-1) unstable; urgency=low
+
+  * New upstream release
+  * Update dependencies to allow Boost 1.37
+  * Add dependency on Boost.DateTime (Closes: #514076)
+  * Add recommendation of Boost.Regex (Closes: #514077)
+  * Add examples to documentation package (Closes: #492349)
+
+ -- Simon Richter <sjr@debian.org>  Mon, 09 Mar 2009 15:36:04 +0100
+
+asio (1.3.1-1) unstable; urgency=low
+
+  * New upstream release
+
+ -- Simon Richter <sjr@debian.org>  Fri, 12 Dec 2008 12:19:28 +0100
+
+asio (1.3.0-1) unstable; urgency=low
+
+  * New upstream release
+  * Allow parallel builds using the parallel= option
+
+ -- Simon Richter <sjr@debian.org>  Sat, 18 Oct 2008 06:59:18 +0200
+
+asio (1.1.1-1) unstable; urgency=low
+
+  * New upstream release (Closes: #489703)
+  * Always force a rebuild of the autoconf generated files
+
+ -- Simon Richter <sjr@debian.org>  Mon, 07 Jul 2008 13:40:31 +0200
+
+asio (1.1.0-2) unstable; urgency=low
+
+  * Allow use together with boost 1.35
+  * Correct name of DEB_BUILD_OPTIONS variable
+
+ -- Simon Richter <sjr@debian.org>  Mon, 09 Jun 2008 07:36:55 +0200
+
+asio (1.1.0-1) unstable; urgency=low
+
+  * New upstream release
+
+ -- Simon Richter <sjr@debian.org>  Fri, 06 Jun 2008 15:23:04 +0200
+
+asio (1.0.0-1) unstable; urgency=low
+
+  * New upstream release (Closes: #461920)
+
+ -- Simon Richter <sjr@debian.org>  Thu, 22 May 2008 00:03:36 +0200
+
+asio (0.3.8~rc3-2) unstable; urgency=low
+
+  * Add missing build dependencies, thanks Matt Kraai for noticing
+    (Closes: #441149)
+
+ -- Simon Richter <sjr@debian.org>  Fri, 07 Sep 2007 11:10:41 +0200
+
+asio (0.3.8~rc3-1) unstable; urgency=low
+
+  * Initial release (Closes: #391678)
+  * Fixed a bug in asio that made asio::has_service<T> fail to instantiate
+
+ -- Simon Richter <sjr@debian.org>  Wed, 08 Aug 2007 04:40:44 +0200
